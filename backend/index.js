@@ -4,6 +4,7 @@ import db from "./db/db.js"; //traemos el modulo de la conexion a base de datos
 import dotenv from "dotenv"; //Configura el proyecto para usar el archivo .env
 import roleRoutes from "./routes/roleRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js"
 
 dotenv.config(); //llamamos la configuracion para leer .env
 
@@ -13,6 +14,7 @@ app.use(cors()); // traemos la libreria para los protocolos de seguridad de peti
 
 app.use("/api/role",roleRoutes) // "api es por estandar, pero puede ir cualqueir nombre"
 app.use("/api/user",userRoutes) // De aqui vamos directo a userRouter que tiene el resto de la ruta.
+app.use("/api/task",taskRoutes)
 
 
 app.listen(process.env.PORT, () =>
